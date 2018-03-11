@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
   task: Task;
   isEditable: boolean;
   editableTask: Task;
+  queryString: string;
 
   constructor(public loginService: LoginService,
     private taskService: TaskService,
