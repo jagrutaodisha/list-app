@@ -8,8 +8,6 @@ import { AuthService } from 'app/auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import {Observable} from 'rxjs/Observable';
-import { FirebaseListObservable } from "angularfire2/database";
-import { User } from "app/users.model";
 
 @Component({
   selector: 'app-login',
@@ -23,7 +21,6 @@ export class LoginComponent implements OnInit {
   message: string;
   returnUrl: string;
   user: Observable<firebase.User>;
-  users: FirebaseListObservable<User[]>;
   constructor(private fb: FormBuilder,
     public loginService: LoginService,
     private route: ActivatedRoute,
@@ -57,11 +54,11 @@ export class LoginComponent implements OnInit {
   } */
 
   /* Firebase based Login*/
-  login({ username, password }: { username: string, password: string }) {
-    this.authService.loginEmail(username, password)
-    .then(() => { this.router.navigateByUrl(this.returnUrl); })
-    .catch( err => { this.message = err.message; });
-  }
+  // login({ username, password }: { username: string, password: string }) {
+  //   this.authService.loginEmail(username, password)
+  //   .then(() => { this.router.navigateByUrl(this.returnUrl); })
+  //   .catch( err => { this.message = err.message; });
+  // }
 
   loginGoogle() {
     this.authService.loginGoogle()
