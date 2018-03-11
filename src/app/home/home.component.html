@@ -1,0 +1,89 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+            <app-create-task [tasks]="tasks"></app-create-task>
+        </div>
+        <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+            <div class="ui large icon input pull-right">
+                <input type="text" placeholder="ଖୋଜନ୍ତୁ..." [(ngModel)]="queryString">
+                <i class="circular search link icon"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="height:450px;overflow-y: scroll">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <div class="ui raised segments">
+                <div class="ui segment" *ngFor="let task of allItems | reverse | searchList: queryString;let i = index;trackBy: trackByFn">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <a class="ui blue ribbon label">
+                                <b>By {{task.assignedByName | uppercase}}</b> on {{ task.createdDate | date}}
+                            </a>
+                        </div>
+                        <div class="col-md-7" *ngIf="task != editableTask" [ngClass]="{'strike': task.done}">
+                            {{task.name}}
+                        </div>
+                        <div class="col-md-7" *ngIf="isEditable && task == editableTask">
+                            <app-edit-task [task]="task"></app-edit-task>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="ui labels pull-right" *ngIf="task != editableTask && task.assignedBy == uid">
+                                <a class="ui green label" *ngIf="!task.done" (click)="closeTask(this.task)">ସମ୍ପୂର୍ଣ୍ଣ</a>
+                                <a class="ui blue label" *ngIf="!task.done" (click)="makeEditable(task)">ସଂଶୋଧନ</a>
+                                <a class="ui red label" (click)="deleteTask(this.task)">ବିଲୋପ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-4">
+            <h1 class="assignedToYou" *ngIf="getOpenAssignedByTask()">Assigned by you.</h1>
+            <h1 class="assignedToYou" *ngIf="!getOpenAssignedByTask()">Assign new task.</h1>
+            <div class="ui link two cards">
+                <div class="card" (click)="showModal();">
+                    <div class="content">
+                        <div class="description">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" *ngFor="let task of assignedByTasks | reverse | slice:0:3">
+                    <div class="content" (click)="showTaskDetails(this.task)">
+                        <div class="right floated meta"><i class="fa fa-times" (click)="deleteTask(this.task)"></i></div>
+                        <div class="header">{{task.name | uppercase | shorten: 'byname' }}</div>
+                        <div class="meta">
+                            On: <a>{{task.createdDate | date}}</a>
+                        </div>
+                        <div class="description">
+                            {{task.description | shorten: 'bydesc' }}
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <span class="right floated">Deadline: <b>{{task.deadline | date}}</b></span>
+                        <span>To: <b style="text-transform:capitalize">{{task.assignedToName}}</b></span>
+                    </div>
+                </div>
+                <div><a class="ui white inverted button pull-right more-button2" *ngIf="assignedByTasks.length > 3">SEE MORE</a></div>
+            </div>
+        </div> -->
+    </div>
+
+
+    <!-- <div class="ui basic modal" id="createTask">
+        <div class="ui icon header">
+            Create New Task
+        </div>
+        <div class="content">
+            <app-create-task [tasks]="tasks"></app-create-task>
+        </div>
+    </div>
+
+    <div class="ui basic modal" id="showTask">
+        <div class="ui icon header">
+            Task Details
+        </div>
+        <div class="content">
+            <app-task-details [task]="task"></app-task-details>
+        </div>
+    </div> -->

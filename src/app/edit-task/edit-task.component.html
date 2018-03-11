@@ -1,0 +1,8 @@
+        <form [formGroup]="addItem" (ngSubmit)="updateTask(addItem.value)">
+            <div class="ui transparent action input">
+                <input type="text" placeholder="ନିଜର ଦାବି ଏଇଠି ଲେଖନ୍ତୁ..." [formControl]="name">
+                <button class="ui purple label pull-right" type="submit" [disabled]="!addItem.valid">
+                    ହୋଇଗଲା
+                </button>
+            </div>
+        </form>

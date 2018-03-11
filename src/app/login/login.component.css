@@ -1,0 +1,63 @@
+.login-card {
+    background: transparent;
+    border: none;
+    width: 40%;
+    height: 40%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    position: absolute;
+}
+
+.form-group label {
+    font-size: 25px;
+    color: white;
+    font-family: 'Comfortaa', cursive, sans-serif;
+}
+
+.form-group input {
+    font-family: 'Montserrat', cursive, sans-serif;
+    font-size: 20px;
+}
+
+.login-title {
+    font-family: 'Montserrat', cursive, sans-serif;
+    color: white;
+    font-size: 3em;
+}
+
+.signup-invite {
+    font-family: 'Montserrat', cursive, sans-serif;
+    color: white;
+    font-size: 1.3em;
+}
+
+.signup-invite>a {
+    color: white;
+    text-decoration: underline;
+}
+
+.btn {
+    font-family: 'Montserrat', cursive, sans-serif;
+    font-size: 1.2em;
+}
+
+.google {
+    height: 47px;
+    margin-left: -4px;
+}
+
+.or {
+    font-size: 28px;
+    color: white;
+    font-family: 'Comfortaa', cursive, sans-serif;
+    font-weight: 700;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn-warning {
+    margin-top: 32px;
+}

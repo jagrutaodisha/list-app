@@ -1,0 +1,12 @@
+<div class="row input-box">
+    <div class="col-md-12">
+        <form [formGroup]="addItem" (ngSubmit)="createTask(addItem.value)">
+            <div class="ui large fluid action input raised">
+                <input type="text" placeholder="ନିଜର ଦାବି ଏଇଠି ଲେଖନ୍ତୁ..." [formControl]="name">
+                <button class="ui button pull-right" type="submit" [disabled]="!addItem.valid">
+                    ଯୋଡ଼ନ୍ତୁ
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

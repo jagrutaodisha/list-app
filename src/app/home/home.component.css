@@ -1,0 +1,53 @@
+.glyphicon-plus {
+    font-size: 7em;
+    padding-left: 16%;
+    color: #587ed6;
+    padding-top: 19%;
+}
+
+.assignedToYou {
+    font-family: 'Montserrat', cursive, sans-serif;
+    color: white;
+    font-size: 3em;
+}
+
+.feed {
+    background-color: white;
+}
+
+.fa-times {
+    font-size: 19px;
+    color: #e83810;
+}
+
+.open {
+    background-color: rgb(230, 183, 49)!important;
+}
+
+.closed {
+    background-color: rgb(230, 183, 49)!important;
+}
+
+.more-button2 {
+    font-family: 'Montserrat', cursive, sans-serif;
+    color: white;
+    top: 34.2em;
+    position: absolute;
+    right: 0.8em;
+}
+
+.more-button1 {
+    font-family: 'Montserrat', cursive, sans-serif;
+    color: white;
+    position: absolute;
+    right: 0.8em;
+    top: 34.2em;
+}
+
+.input-box {
+    padding-bottom: 15px;
+}
+
+.strike {
+    text-decoration: line-through;
+}
