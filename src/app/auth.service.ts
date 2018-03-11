@@ -8,9 +8,9 @@ import { User } from 'app/users.model';
 export class AuthService {
   constructor(public af: AngularFireAuth, private db: AngularFireDatabase) { }
 
-  // signup(username: string, password: string) {
-  //   return this.af.auth.createUserWithEmailAndPassword(username, password);
-  // }
+  signup(username: string, password: string) {
+    return this.af.auth.createUserWithEmailAndPassword(username, password);
+  }
 
   // loginEmail(username: string, password: string) {
   //   return this.af.auth.signInWithEmailAndPassword(username, password);
