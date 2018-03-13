@@ -51,3 +51,7 @@
 .strike {
     text-decoration: line-through;
 }
+
+.axn-btn {
+    font-size: 1rem !important;
+}

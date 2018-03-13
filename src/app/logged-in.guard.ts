@@ -35,6 +35,6 @@ export class LoggedInGuard implements CanActivate {
       return this.af.authState
       .take(1)
       .map(authState => !!authState)
-      .do(af => !af ? this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }}) : true)
+      .do(af => !af ? this.router.navigate(['login'], { queryParams: { returnUrl: state.url }}) : true)
   }
 }

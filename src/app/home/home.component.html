@@ -28,9 +28,9 @@
                         </div>
                         <div class="col-md-3">
                             <div class="ui labels pull-right" *ngIf="task != editableTask && task.assignedBy == uid">
-                                <a class="ui green label" *ngIf="!task.done" (click)="closeTask(this.task)">ସମ୍ପୂର୍ଣ୍ଣ</a>
-                                <a class="ui blue label" *ngIf="!task.done" (click)="makeEditable(task)">ସଂଶୋଧନ</a>
-                                <a class="ui red label" (click)="deleteTask(this.task)">ବିଲୋପ</a>
+                                <a class="ui green label axn-btn" *ngIf="!task.done" (click)="closeTask(this.task)">ସମ୍ପୂର୍ଣ୍ଣ</a>
+                                <a class="ui blue label axn-btn" *ngIf="!task.done" (click)="makeEditable(task)">ସଂଶୋଧନ</a>
+                                <a class="ui red label axn-btn" (click)="deleteTask(this.task)">ବିଲୋପ</a>
                             </div>
                         </div>
                     </div>
