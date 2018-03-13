@@ -23,7 +23,7 @@
                         <div class="col-md-7" *ngIf="task != editableTask" [ngClass]="{'strike': task.done}">
                             {{task.name}}
                         </div>
-                        <div class="col-md-7" *ngIf="isEditable && task == editableTask">
+                        <div class="col-md-10" *ngIf="isEditable && task == editableTask">
                             <app-edit-task [task]="task"></app-edit-task>
                         </div>
                         <div class="col-md-3">
