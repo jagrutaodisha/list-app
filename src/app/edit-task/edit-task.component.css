@@ -5,3 +5,9 @@
 .axn-btn {
     font-size: 1rem !important;
 }
+
+@media(max-width: 990px) {
+    .task {
+        padding-bottom: 12px;
+    }
+}
