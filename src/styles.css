@@ -3,10 +3,20 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display');
+
 body {
     background-image: url('./assets/img2.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
+}
+
+
+@media (max-width: 990px) {
+    body {
+        background-image: url('./assets/mobile.jpg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
 }
 
 /* @media only screen and (max-width: 600px) {

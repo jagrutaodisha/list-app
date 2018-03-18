@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+
   TaskByUser(uid): void {
     // this.taskService.TaskByUser(this.currentUser).subscribe(res => {this.assignedByTasks = res }, err => {console.log(err)});
     // this.taskService.TasksByUser(uid).subscribe(res => this.assignedByTasks = this.OpenTask(res), err => console.log(err));
@@ -63,13 +64,16 @@ export class HomeComponent implements OnInit {
   }
 
   makeEditable(task) {
-    this.editableTask = task;
+    if (this.isEditable === false) {
+      this.editableTask = task;
+    }
     this.isEditable = true;
   }
 
   trackByFn(index: number, task: Task) {
     return index;
   }
+
   // showModal(): boolean {
   //   $('#createTask').modal('show');
   //   return false;

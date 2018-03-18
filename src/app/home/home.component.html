@@ -4,7 +4,7 @@
             <app-create-task [tasks]="tasks"></app-create-task>
         </div>
         <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
-            <div class="ui large icon input pull-right">
+            <div class="ui large icon input pull-right-lg fluid search-box">
                 <input type="text" placeholder="ଖୋଜନ୍ତୁ..." [(ngModel)]="queryString">
                 <i class="circular search link icon"></i>
             </div>
@@ -15,19 +15,19 @@
             <div class="ui raised segments">
                 <div class="ui segment" *ngFor="let task of allItems | reverse | searchList: queryString;let i = index;trackBy: trackByFn">
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12 assignee-name">
                             <a class="ui blue ribbon label">
                                 <b>By {{task.assignedByName | uppercase}}</b> on {{ task.createdDate | date}}
                             </a>
                         </div>
-                        <div class="col-md-7" *ngIf="task != editableTask" [ngClass]="{'strike': task.done}">
+                        <div class="col-md-7 col-lg-7 col-sm-12 col-xs-12 task" *ngIf="!isEditable || task != editableTask" [ngClass]="{'strike': task.done}">
                             {{task.name}}
                         </div>
-                        <div class="col-md-10" *ngIf="isEditable && task == editableTask">
-                            <app-edit-task [task]="task"></app-edit-task>
+                        <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12" *ngIf="isEditable && task == editableTask">
+                            <app-edit-task [task]="task" [(isEditable)] = "isEditable"></app-edit-task>
                         </div>
-                        <div class="col-md-3">
-                            <div class="ui labels pull-right" *ngIf="task != editableTask && task.assignedBy == uid">
+                        <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+                            <div class="ui labels pull-right" *ngIf="!isEditable || task != editableTask && task.assignedBy == uid">
                                 <a class="ui green label axn-btn" *ngIf="!task.done" (click)="closeTask(this.task)">ସମ୍ପୂର୍ଣ୍ଣ</a>
                                 <a class="ui blue label axn-btn" *ngIf="!task.done" (click)="makeEditable(task)">ସଂଶୋଧନ</a>
                                 <a class="ui red label axn-btn" (click)="deleteTask(this.task)">ବିଲୋପ</a>
@@ -70,7 +70,7 @@
     </div>
 </div>
 
-    <!-- <div class="ui basic modal" id="createTask">
+<!-- <div class="ui basic modal" id="createTask">
         <div class="ui icon header">
             Create New Task
         </div>

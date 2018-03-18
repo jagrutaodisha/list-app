@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, Input, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { FormGroup, AbstractControl, FormBuilder, Validators, NgModel } from '@angular/forms';
 import { Task } from '../tasks.model';
 import { TaskService } from '../task.service';
 import { LoginService } from '../login/login.service';
@@ -17,6 +17,8 @@ export class EditTaskComponent implements OnInit {
   assignedBy: string;
   tempAssignedByName: string;
   currentTask: Task;
+  @Output() isEditableChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input() isEditable: boolean;
   @Input() task: Task;
 
   constructor(private fb: FormBuilder,
@@ -50,8 +52,13 @@ export class EditTaskComponent implements OnInit {
   }
 
   updateTask(value: any): void {
-    this.currentTask.name = value.name;
-    this.currentTask.createdDate = (new Date()).toString();
-    this.taskService.updateTask(this.currentTask);
+      this.currentTask.name = value.name;
+      this.currentTask.createdDate = (new Date()).toString();
+      this.taskService.updateTask(this.currentTask);
+  }
+
+  cancel(): void {
+    this.isEditable = false;
+    this.isEditableChange.emit(this.isEditable);
   }
 }

@@ -11,8 +11,8 @@ export class ReversePipe implements PipeTransform {
   }
 
   compare(a: Task, b: Task) {
-    if (a.createdDate > b.createdDate)  { return -1 };
-    if (a.createdDate < b.createdDate) { return 1 };
+    if (Date.parse(a.createdDate) > Date.parse(b.createdDate))  { return -1 };
+    if (Date.parse(a.createdDate) < Date.parse(b.createdDate)) { return 1 };
     return 0;
   }
 }

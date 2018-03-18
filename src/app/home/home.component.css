@@ -55,3 +55,13 @@
 .axn-btn {
     font-size: 1rem !important;
 }
+
+@media(max-width: 990px) {
+    .search-box {
+        padding-bottom: 15px;
+    }
+
+    .task, .assignee-name {
+        padding-bottom: 12px;
+    }
+}

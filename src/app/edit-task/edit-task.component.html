@@ -1,8 +1,17 @@
-        <form [formGroup]="addItem" (ngSubmit)="updateTask(addItem.value)">
-            <div class="ui transparent action input">
-                <input type="text" placeholder="ନିଜର ଦାବି ଏଇଠି ଲେଖନ୍ତୁ..." [formControl]="name">
-                <button class="ui purple label pull-right axn-btn" type="submit" [disabled]="!addItem.valid">
-                    ହୋଇଗଲା
-                </button>
+<form [formGroup]="addItem" (ngSubmit)="updateTask(addItem.value)">
+    <div class="row">
+        <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+            <div class="ui form">
+                <div class="field">
+                    <textarea [formControl]="name" rows="3"></textarea>
+                </div>
             </div>
-        </form>
+        </div>
+        <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 ui labels">
+            <div class="ui labels pull-right">
+                <button class="ui purple label axn-btn" type="submit" [disabled]="!addItem.valid">ହୋଇଗଲା</button>
+                <button class="ui red label axn-btn" type="button" (click)="cancel()">ବାତିଲ୍</button>
+            </div>
+        </div>
+    </div>
+</form>
