@@ -11,3 +11,15 @@
 .fa-heart {
     color: red;
 }
+
+@media(max-width: 990px) {
+    .footer {
+        font-family: 'Comfortaa', cursive, sans-serif;
+        color: white;
+        font-size: 1.2em;
+        bottom: 2px;
+        margin: auto;
+        left: 3.5em;
+        position: absolute;
+    }
+}

@@ -14,3 +14,24 @@
     font-size: 30px !important;
     color: white !important;
 }
+
+@media(min-width: 990px) {
+    .short-name {
+        display: none;
+    }
+    
+    
+    .dropdown-menu {
+        min-width: 0px; 
+    }
+}
+
+@media(max-width: 990px) {
+    .short-name {
+        color: white;
+    }
+    
+    .dropdown-menu {
+        min-width: 0px; 
+    }
+}
