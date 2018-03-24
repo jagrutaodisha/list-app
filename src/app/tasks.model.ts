@@ -6,5 +6,6 @@ export class Task {
     createdDate: string;
     assignedBy: string;
     assignedByName: string;
+    assignedByPhotoUrl: string;
     done: Boolean;
 }

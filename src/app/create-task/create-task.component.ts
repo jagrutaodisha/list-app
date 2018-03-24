@@ -20,6 +20,7 @@ export class CreateTaskComponent implements OnInit {
   name: AbstractControl;
   createdDate: string;
   assignedBy: string;
+  assignedByPhotoUrl: string;
   tempAssignedByName: string;
 
   @Input() tasks: Array<Task>;
@@ -41,6 +42,7 @@ export class CreateTaskComponent implements OnInit {
     this.userService.getCurrentUserDetails()
       .subscribe(authState => {
         this.assignedBy = authState.uid;
+        this.assignedByPhotoUrl = authState.photoURL;
         this.tempAssignedByName = (authState.displayName != null) ? authState.displayName.split(' ')[0] : authState.email.split('@')[0];
       });
   }
@@ -53,6 +55,7 @@ export class CreateTaskComponent implements OnInit {
     value.assignedByName = this.tempAssignedByName;
     value.createdDate = this.createdDate;
     value.assignedBy = this.assignedBy;
+    value.assignedByPhotoUrl = this.assignedByPhotoUrl;
     this.taskService.createTask(value);
     this.addItem.reset();
     return false;
